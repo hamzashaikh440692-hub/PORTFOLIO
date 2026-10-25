@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js"</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PORTFOLIO</title>
+<meta name="description" content="Portfolio of Hamza Shaikh, a web development student learning frontend and full-stack development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#15121f; --night2:#1d1930; --text:#f3eefb; --muted:#b4abc9;
+  --lilac:#b9a4ff; --peach:#ffb8a1; --mint:#9be8d0;
+  --glass:rgba(255,255,255,.06); --edge:rgba(255,255,255,.14);
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:#0e0b1f;line-height:1.7;font-size:17px;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--mint);outline-offset:4px;border-radius:6px}
+.wrap{max-width:980px;margin:0 auto;padding:0 26px;position:relative;z-index:1}
+
+/* dreamy aurora background */
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(120% 60% at 50% 105%,rgba(255,170,150,.38),transparent 70%),linear-gradient(180deg,#0e0b1f 0%,#1b1436 36%,#35204a 70%,#5e3156 100%)}
+.aurora::after{content:"";position:absolute;inset:0;opacity:.09;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 22s ease-in-out infinite alternate}
+.o1{width:480px;height:480px;background:var(--lilac);top:-120px;left:-100px}
+.o2{width:420px;height:420px;background:#7f6bff;top:30%;right:-140px;animation-delay:-8s;opacity:.35}
+.o3{width:460px;height:460px;background:#ff8fa3;bottom:-180px;left:25%;animation-delay:-14s;opacity:.28}
+@keyframes drift{to{transform:translate(70px,50px) scale(1.15)}}
+
+/* nav */
+header{position:fixed;top:16px;left:0;right:0;z-index:10;display:flex;justify-content:center;padding:0 16px}
+nav{display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(21,18,31,.6);backdrop-filter:blur(14px);border:1px solid var(--edge)}
+nav a{padding:8px 18px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:.95rem;font-weight:500;transition:background .2s,color .2s}
+nav a:hover{background:var(--glass);color:var(--text)}
+
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center}
+.hero .wrap{padding-top:120px;padding-bottom:80px}
+.hello{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(3.4rem,13vw,8.5rem);line-height:.95;letter-spacing:-.02em}
+h1 em{background:linear-gradient(100deg,var(--lilac),var(--peach),var(--mint),var(--lilac));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 8s linear infinite}
+@keyframes shine{to{background-position:250% 0}}
+.role{margin:26px auto 0;max-width:30em;font-size:1.2rem;color:var(--muted)}
+.cta{display:flex;gap:14px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.btn{padding:13px 28px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--edge);transition:transform .2s,background .2s}
+.btn.main{background:linear-gradient(120deg,var(--lilac),var(--peach));color:#1b1530;border-color:transparent}
+.btn.soft{background:var(--glass);backdrop-filter:blur(8px)}
+.btn:hover{transform:translateY(-3px)}
+
+/* sections */
+section{padding:90px 0}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;margin-bottom:14px}
+.sub{color:var(--muted);max-width:34em;margin-bottom:38px}
+.glass{background:var(--glass);border:1px solid var(--edge);border-radius:24px;backdrop-filter:blur(14px)}
+
+.about{padding:42px;display:grid;grid-template-columns:1.5fr 1fr;gap:44px}
+.about p+p{margin-top:16px}
+.about p{color:var(--muted)}
+.facts{list-style:none;display:grid;gap:18px}
+.facts li{padding-left:16px;border-left:2px solid var(--lilac)}
+.facts b{display:block;font-family:var(--serif);font-weight:400;font-size:1.4rem;color:var(--text)}
+.facts span{color:var(--muted);font-size:.95rem}
+
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{padding:10px 22px;border-radius:999px;background:var(--glass);border:1px solid var(--edge);font-weight:500}
+.chip.soon{border-style:dashed;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.card{padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:transform .25s,border-color .25s,background .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--lilac);background:rgba(255,255,255,.1)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:1.7rem}
+.card p{color:var(--muted);flex:1;font-size:.98rem}
+.card small{color:var(--mint);font-weight:700}
+
+.contact{text-align:center;padding:60px 40px}
+.contact .cta{margin-top:26px}
+footer{position:relative;z-index:1;text-align:center;padding:36px 20px 50px;color:var(--muted);font-size:.92rem}
+
+.card .links{display:flex;gap:18px;margin-top:6px}
+.card .links a{color:var(--mint);font-weight:700;text-decoration:none}
+.card .links a:hover{text-decoration:underline}
+.card .lang{color:var(--muted);font-size:.85rem}
+.readme-box{position:relative;max-height:560px;overflow:hidden;padding:36px 38px 0}
+.readme-box.open{max-height:none;padding-bottom:30px}
+.readme-box::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(transparent,rgba(30,22,52,.96));pointer-events:none;border-radius:0 0 24px 24px}
+.readme-box.open::after{display:none}
+.readme-more{display:block;margin:18px auto 0}
+.md h1,.md h2,.md h3{font-family:var(--serif);font-weight:400;line-height:1.2;margin:26px 0 12px}
+.md h1{font-size:2.2rem}.md h2{font-size:1.8rem}.md h3{font-size:1.4rem}
+.md>:first-child{margin-top:0}
+.md p,.md li{color:var(--muted)}
+.md ul,.md ol{padding-left:24px;margin:10px 0}
+.md a{color:var(--mint)}
+.md img{max-width:100%;height:auto;vertical-align:middle;border-radius:6px}
+.md hr{border:0;border-top:1px solid var(--edge);margin:26px 0}
+.md pre{background:rgba(0,0,0,.3);padding:16px;border-radius:12px;overflow-x:auto;margin:14px 0;color:var(--text)}
+.md code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em}
+.md table{border-collapse:collapse;margin:14px 0;display:block;overflow-x:auto}
+.md th,.md td{border:1px solid var(--edge);padding:8px 14px;text-align:left}
+
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:0;animation:twinkle var(--d,4s) ease-in-out var(--delay,0s) infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.6)}50%{opacity:.85;transform:scale(1.6)}}
+.glow{position:fixed;top:0;left:0;width:380px;height:380px;margin:-190px 0 0 -190px;border-radius:50%;background:radial-gradient(circle,rgba(185,164,255,.2),transparent 65%);pointer-events:none;z-index:0;opacity:0;transition:opacity .4s;will-change:transform}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:7px 18px;margin-bottom:26px;border-radius:999px;background:var(--glass);border:1px solid var(--edge);color:var(--muted);font-size:.9rem;backdrop-filter:blur(8px)}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(155,232,208,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(155,232,208,0)}100%{box-shadow:0 0 0 0 rgba(155,232,208,0)}}
+.hello{display:none}
+.marquee{position:relative;z-index:1;overflow:hidden;border-block:1px solid var(--edge);background:rgba(255,255,255,.03);padding:16px 0;white-space:nowrap}
+.track{display:inline-flex;animation:scroll 32s linear infinite}
+.track span{font-family:var(--serif);font-style:italic;font-size:1.7rem;color:var(--muted);padding-right:.9rem}
+.track span b{color:var(--peach);font-weight:400;padding:0 .9rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+h2[data-n]::before{content:attr(data-n);display:block;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--peach);margin-bottom:10px}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+.chip{transition:transform .2s,border-color .2s,background .2s}
+.chip:hover{transform:translateY(-3px) rotate(-2deg);border-color:var(--peach);background:rgba(255,255,255,.1)}
+
+.moon{position:absolute;top:13%;right:11%;width:86px;height:86px;border-radius:50%;box-shadow:-24px 10px 0 0 #ffe8cd;filter:drop-shadow(0 0 22px rgba(255,222,190,.55)) drop-shadow(0 0 70px rgba(185,164,255,.45));transform:rotate(-12deg);animation:floaty 9s ease-in-out infinite alternate}
+@keyframes floaty{to{transform:rotate(-12deg) translateY(14px)}}
+.shoot{position:absolute;top:10%;left:68%;width:150px;height:2px;border-radius:2px;background:linear-gradient(90deg,#fff,rgba(255,255,255,0));opacity:0;animation:shoot 11s linear 3s infinite}
+@keyframes shoot{0%{opacity:0;transform:translate(0,0) rotate(-35deg)}2%{opacity:1}8%{opacity:0;transform:translate(-460px,320px) rotate(-35deg)}100%{opacity:0}}
+@media(max-width:760px){
+  .about{grid-template-columns:1fr;padding:28px}
+  nav a{padding:8px 12px;font-size:.88rem}
+  section{padding:64px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}.orb,.star,.track,h1 em,.badge i,.moon{animation:none}.shoot{display:none}.star{opacity:.5}.js .reveal{opacity:1;transform:none;transition:none}.chip{transition:none}.btn,.card{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true">
+  <div class="moon"></div><div class="shoot"></div>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+</div>
+
+<header>
+  <nav aria-label="Main">
+    <a href="#top">Home</a>
+    <a href="#about">About</a>
+    <a href="#readme">README</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="badge"><i></i>open to new projects</div>
+      <p class="hello">Hello, I’m</p>
+      <h1>Hamza <em>Shaikh</em></h1>
+      <p class="role">A web development student building clean, responsive websites, and growing into a full-stack developer.</p>
+      <div class="cta">
+        <a class="btn main" href="#projects">View my work</a>
+        <a class="btn soft" href="https://github.com/hamzashaikh440692-hub" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="track"><span>learning<b>✦</b></span><span>building<b>✦</b></span><span>html<b>✦</b></span><span>css<b>✦</b></span><span>git<b>✦</b></span><span>github<b>✦</b></span><span>growing<b>✦</b></span><span>full-stack<b>✦</b></span><span>learning<b>✦</b></span><span>building<b>✦</b></span><span>html<b>✦</b></span><span>css<b>✦</b></span><span>git<b>✦</b></span><span>github<b>✦</b></span><span>growing<b>✦</b></span><span>full-stack<b>✦</b></span></div></div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="glass about">
+        <div>
+          <h2 data-n="✦ 01 · about">About me</h2>
+          <p>I’m a student who loves building things with code. I enjoy creating clean, responsive websites, and I keep improving by building projects and finishing assignments.</p>
+          <p>Right now I’m learning HTML, CSS, Git and GitHub, and exploring something new every day. I’m open to learning, collaborating and taking on new projects.</p>
+        </div>
+        <ul class="facts">
+          <li><b>Frontend developer</b><span>in training</span></li>
+          <li><b>HTML, CSS, Git</b><span>what I’m learning now</span></li>
+          <li><b>Full-stack</b><span>where I’m headed</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="readme">
+    <div class="wrap">
+      <h2 data-n="✦ 02 · readme">From my README</h2>
+      <p class="sub">This section updates by itself. Whatever I write in my GitHub profile README shows up here.</p>
+      <div class="glass readme-box" id="readmeBox">
+        <div class="md" id="readmeContent"><p>Loading…</p></div>
+      </div>
+      <button class="btn soft readme-more" id="readmeMore" type="button">Read full README</button>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2 data-n="✦ 03 · skills">Skills &amp; tools</h2>
+      <p class="sub">What I use today, and what I’m working toward.</p>
+      <div class="chips">
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+        <span class="chip">Git</span>
+        <span class="chip">GitHub</span>
+        <span class="chip">VS Code</span>
+        <span class="chip soon">JavaScript – next</span>
+        <span class="chip soon">Full-stack – goal</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2 data-n="✦ 04 · projects">Projects</h2>
+      <p class="sub">My assignments and practice work. Each card opens the code on GitHub.</p>
+      <div class="grid" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="glass contact">
+        <h2 data-n="✦ 05 · contact">Let’s connect</h2>
+        <p class="sub" style="margin:0 auto">I’m happy to collaborate, learn from others and work on new projects.</p>
+        <div class="cta">
+          <a class="btn main" href="https://github.com/hamzashaikh440692-hub" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn soft" href="https://instagram.com/not._.h4amza" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn soft" href="https://facebook.com/not._.h4amza" target="_blank" rel="noopener">Facebook</a>
+          <!-- Add your email: <a class="btn soft" href="mailto:YOUR_EMAIL@gmail.com">Email</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> Hamza Shaikh</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script>
+  var user = "hamzashaikh440692-hub";
+
+  // Your repos. Edit the descriptions as you like.
+  var projects = [
+    {repo:"assignment-1",  title:"Assignment 1",  desc:"HTML assignment."},
+    {repo:"assignment-2",  title:"Assignment 2",  desc:"HTML assignment."},
+    {repo:"assignment-3",  title:"Assignment 3",  desc:"Multi-page website with home, menu, about and contact pages."},
+    {repo:"assignment-4",  title:"Assignment 4",  desc:"HTML assignment."},
+    {repo:"assignment-5",  title:"Assignment 5",  desc:"HTML assignment."},
+    {repo:"assignment-6",  title:"Assignment 6",  desc:"HTML assignment."},
+    {repo:"assignment-7",  title:"Assignment 7",  desc:"Page with social media icons (Instagram, Twitter, YouTube)."},
+    {repo:"assignment-8",  title:"Assignment 8",  desc:"HTML assignment with three page versions."},
+    {repo:"assignment-12", title:"Assignment 12", desc:"HTML assignment."},
+    {repo:"assignment-13", title:"Assignment 13", desc:"Image-rich page with header, feedback and form sections."},
+    {repo:"assignment-14", title:"Assignment 14", desc:"Page built with photos, logo and custom header."},
+    {repo:"assignment-15", title:"Assignment 15", desc:"Photo page using AVIF images."},
+    {repo:"hamza-shaikh",  title:"Hamza Shaikh",  desc:"Multi-page website with home, menu, about and contact pages."},
+    {repo:"hamzash",       title:"Hamzash",       desc:"Single-page website."}
+  ];
+
+  var grid = document.getElementById("projectGrid");
+  var known = {};
+  projects.forEach(function(p){ known[p.repo] = p; });
+
+  function prettyName(name){
+    return name.replace(/[-_]+/g, " ").replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+  }
+
+  function link(text, href){
+    var a = document.createElement("a");
+    a.textContent = text; a.href = href; a.target = "_blank"; a.rel = "noopener";
+    return a;
+  }
+
+  function render(list){
+    grid.innerHTML = "";
+    list.forEach(function(p){
+      var card = document.createElement("div");
+      card.className = "card glass";
+      var h = document.createElement("h3"); h.textContent = p.title;
+      var d = document.createElement("p"); d.textContent = p.desc;
+      var links = document.createElement("div"); links.className = "links";
+      if (p.live) links.appendChild(link("Live demo", p.live));
+      links.appendChild(link("Code on GitHub", p.code));
+      card.appendChild(h); card.appendChild(d); card.appendChild(links);
+      grid.appendChild(card);
+    });
+  }
+
+  function fromKnown(p){
+    return {
+      title: p.title, desc: p.desc,
+      live: "https://" + user + ".github.io/" + p.repo + "/",
+      code: "https://github.com/" + user + "/" + p.repo
+    };
+  }
+
+  render(projects.map(fromKnown));
+
+  // Also pulls any other public repo you create later
+  fetch("https://api.github.com/users/" + user + "/repos?per_page=100")
+    .then(function(r){ if(!r.ok) throw new Error("GitHub API error"); return r.json(); })
+    .then(function(repos){
+      var skip = [user.toLowerCase(), user.toLowerCase() + ".github.io"];
+      var list = repos
+        .filter(function(r){ return !r.fork && skip.indexOf(r.name.toLowerCase()) === -1; })
+        .sort(function(a, b){ return a.name.localeCompare(b.name, undefined, {numeric:true}); })
+        .map(function(r){
+          var k = known[r.name];
+          return {
+            title: k ? k.title : prettyName(r.name),
+            desc: r.description || (k ? k.desc : "Repository on GitHub."),
+            live: r.has_pages ? "https://" + user + ".github.io/" + r.name + "/" : "",
+            code: r.html_url
+          };
+        });
+      if (list.length) render(list);
+    })
+    .catch(function(){ /* keep the list above */ });
+
+
+  // Loads your GitHub profile README (main branch) and shows it on the page
+  var readmeUrl = "https://raw.githubusercontent.com/" + user + "/" + user + "/main/README.md";
+  var readmeEl = document.getElementById("readmeContent");
+  var readmeBox = document.getElementById("readmeBox");
+  var readmeBtn = document.getElementById("readmeMore");
+
+  fetch(readmeUrl, {cache: "no-cache"})
+    .then(function(r){ if(!r.ok) throw new Error("README not found"); return r.text(); })
+    .then(function(md){
+      readmeEl.innerHTML = DOMPurify.sanitize(marked.parse(md, {gfm:true}));
+      readmeEl.querySelectorAll("a").forEach(function(a){
+        a.target = "_blank"; a.rel = "noopener";
+      });
+    })
+    .catch(function(){
+      readmeEl.innerHTML = '<p>Could not load the README. <a href="https://github.com/' + user + '" target="_blank" rel="noopener">Open it on GitHub</a>.</p>';
+      readmeBox.classList.add("open");
+      readmeBtn.style.display = "none";
+    });
+
+  readmeBtn.addEventListener("click", function(){
+    var open = readmeBox.classList.toggle("open");
+    readmeBtn.textContent = open ? "Show less" : "Read full README";
+  });
+
+
+  // ✦ aesthetic touches: stars, cursor glow, scroll reveal
+  var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var sky = document.querySelector(".aurora");
+  for (var i = 0; i < 70; i++) {
+    var st = document.createElement("i");
+    st.className = "star";
+    st.style.left = Math.random() * 100 + "%";
+    st.style.top = Math.random() * 100 + "%";
+    var sz = 1 + Math.random() * 2;
+    st.style.width = st.style.height = sz + "px";
+    st.style.setProperty("--d", (3 + Math.random() * 4) + "s");
+    st.style.setProperty("--delay", (-Math.random() * 6) + "s");
+    sky.appendChild(st);
+  }
+
+  if (!calm && window.matchMedia("(hover: hover)").matches) {
+    var glow = document.createElement("div");
+    glow.className = "glow";
+    glow.setAttribute("aria-hidden", "true");
+    document.body.appendChild(glow);
+    window.addEventListener("pointermove", function(e){
+      glow.style.opacity = 1;
+      glow.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)";
+    });
+    document.addEventListener("pointerleave", function(){ glow.style.opacity = 0; });
+  }
+
+  var items = document.querySelectorAll("section:not(.hero) .wrap > *");
+  items.forEach(function(el){ el.classList.add("reveal"); });
+  if ("IntersectionObserver" in window && !calm) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold: 0.12});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add("in"); });
+  }
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
