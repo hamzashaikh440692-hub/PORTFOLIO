@@ -134,6 +134,51 @@ h2[data-n]::before{content:attr(data-n);display:block;font-family:var(--sans);fo
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.orb,.star,.track,h1 em,.badge i,.moon{animation:none}.shoot{display:none}.star{opacity:.5}.js .reveal{opacity:1;transform:none;transition:none}.chip{transition:none}.btn,.card{transition:none}
 }
+  /* Mobile Navbar Responsive */
+@media (max-width: 600px) {
+    header {
+        top: 10px;
+        padding: 0 12px;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        padding: 5px;
+        border-radius: 30px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .hero .wrap {
+        padding-top: 110px;
+    }
+}
+
+@media (max-width: 380px) {
+    nav a {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+}
 </style>
 </head>
 <body>
