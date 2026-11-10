@@ -87,3 +87,9 @@ footer a:hover{color:var(--ink)}
 .road .card{grid-template-columns:1fr;gap:6px}
 section{padding:52px 0}
 }
+
+/* Hover effect: boxes lift and scale up */
+.card,.band,.photo{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover,.band:hover,.photo:hover{transform:translateY(-6px) scale(1.03);border-color:var(--accent);box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.road .card:hover{transform:translateY(-4px) scale(1.015)}
+@media(prefers-reduced-motion:reduce){.card,.band,.photo{transition:none}.card:hover,.band:hover,.photo:hover{transform:none}}
