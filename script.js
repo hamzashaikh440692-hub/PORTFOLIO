@@ -1,5 +1,5 @@
 /* Contact details. Leave empty to hide the card. */
-const EMAIL = 'hamzashaikh440692@gmail.com';      // e.g. 'yourname@example.com'
+const EMAIL = '';      // e.g. 'yourname@example.com'
 const WHATSAPP = '03175404349';   // country code first, no plus sign, e.g. '923001234567'
 
 const USER = 'hamzashaikh440692-hub';
