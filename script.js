@@ -1,6 +1,6 @@
 /* Contact details. Leave empty to hide the card. */
 const EMAIL = '';      // e.g. 'yourname@example.com'
-const WHATSAPP = '03715404349';   // country code first, no plus sign, e.g. '923001234567'
+const WHATSAPP = '+923715404349';   // country code first, no plus sign, e.g. '923001234567'
 
 const USER = 'hamzashaikh440692-hub';
 const PAGES = `https://${USER}.github.io/`;
