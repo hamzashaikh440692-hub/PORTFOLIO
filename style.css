@@ -1,4 +1,4 @@
-:root{--bg:#0e1518;--surface:#151f24;--edge:#27373d;--ink:#eef3f3;--muted:#9fb3b6;--accent:rgb(196, 175, 175);--on:#06201d}
+:root{--bg:#0F172A;--surface:#172033;--edge:#334155;--ink:#F8FAFC;--muted:#94A3B8;--accent:#c7ad78;--on: #0F172A;}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
 h1,h2,h3{font-family:'Outfit',sans-serif;line-height:1.2;font-weight:600}
